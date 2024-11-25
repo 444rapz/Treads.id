@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class Soalno5 {
+    public static void main(String[] args) {
+        Scanner masukan = new Scanner(System.in);
+        int[] angka = new int[5];
+
+        for (int i = 0; i < angka.length; i++) {
+            System.out.print("Masukkan nilai array ke-" + (i + 1) + ": ");
+            angka[i] = masukan.nextInt();
+        }
+        
+        System.out.println("\nOutput:");
+        for (int i = 0; i < angka.length; i++) {
+            System.out.print("Nilai array ke-" + (i + 1) + " = " + angka[i] + " ");
+            for (int j = 0; j < angka[i]; j++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+        
+        masukan.close();
+    }
+}

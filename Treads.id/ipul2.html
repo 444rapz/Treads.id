@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Satisfaction</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.8.1/font/bootstrap-icons.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #f8f9fa;
+      }
+      .rating-star {
+        font-size: 1.5rem;
+        cursor: pointer;
+        color: #ddd;
+        transition: color 0.3s;
+      }
+      .rating-star.selected {
+        color: #ffc107;
+      }
+      .feedback-box {
+        min-height: 100px;
+      }
+      .thank-you-message {
+        display: none;
+        font-size: 1.2rem;
+        color: #28a745;
+        margin-top: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h1 class="text-center">Satisfaction Survey</h1>
+      <p class="text-center">
+        We value your feedback! Please let us know how we’re doing.
+      </p>
+      <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-6">
+          <div class="text-center mb-4">
+            <h5>Rate your experience</h5>
+            <div id="rating" class="d-flex justify-content-center">
+              <span class="rating-star" data-value="1">&#9733;</span>
+              <span class="rating-star" data-value="2">&#9733;</span>
+              <span class="rating-star" data-value="3">&#9733;</span>
+              <span class="rating-star" data-value="4">&#9733;</span>
+              <span class="rating-star" data-value="5">&#9733;</span>
+            </div>
+          </div>
+          <div class="mb-4">
+            <label for="feedback" class="form-label">Your feedback</label>
+            <textarea
+              class="form-control feedback-box"
+              id="feedback"
+              rows="4"
+              placeholder="Tell us about your experience..."
+            ></textarea>
+          </div>
+
+          <div class="text-center">
+            <button id="submitBtn" class="btn btn-primary w-100">
+              Submit Feedback
+            </button>
+          </div>
+
+          <div id="thankYouMessage" class="thank-you-message text-center">
+            Thank you for your feedback!
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="bg-light text-dark py-4 mt-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <h5>Follow Treads id</h5>
+            <div>
+              <a href="#" class="text-dark me-2"
+                ><i class="bi bi-twitter"></i
+              ></a>
+              <a href="#" class="text-dark me-2"
+                ><i class="bi bi-facebook"></i
+              ></a>
+              <a href="#" class="text-dark me-2"
+                ><i class="bi bi-pinterest"></i
+              ></a>
+              <a href="#" class="text-dark me-2"
+                ><i class="bi bi-youtube"></i
+              ></a>
+              <a href="#" class="text-dark"><i class="bi bi-instagram"></i></a>
+            </div>
+          </div>
+          <div class="col-md-4 text-end">
+            <h5>Store Locator</h5>
+            <p>Find a Treads id store near you.</p>
+            <button class="btn btn-dark">Find a Store</button>
+            <select class="form-select mt-2">
+              <option selected>Location</option>
+              <option value="1">USA</option>
+              <option value="2">Canada</option>
+              <option value="3">indonesia</option>
+              <option value="3">Other</option>
+            </select>
+          </div>
+        </div>
+        <hr />
+        <div class="text-center">
+          <p class="mb-0">&copy; 2024 Treads id. All rights reserved.</p>
+          <a href="#" class="text-dark">Privacy Policy</a> |
+          <a href="#" class="text-dark">Terms of Service</a> |
+          <a href="#" class="text-dark">Modern Slavery Statement</a>
+        </div>
+      </div>
+    </footer>
+    <script>
+      const stars = document.querySelectorAll(".rating-star");
+      let selectedRating = 0;
+
+      stars.forEach((star) => {
+        star.addEventListener("click", () => {
+          // Remove the selected class from all stars and add to the clicked star
+          stars.forEach((s) => s.classList.remove("selected"));
+          star.classList.add("selected");
+          selectedRating = star.getAttribute("data-value");
+        });
+
+        star.addEventListener("mouseover", () => {
+          // Add selected class to all stars up to the hovered star
+          stars.forEach((s) => s.classList.remove("selected"));
+          for (let i = 0; i < star.getAttribute("data-value"); i++) {
+            stars[i].classList.add("selected");
+          }
+        });
+
+        star.addEventListener("mouseout", () => {
+          // Reset stars to the last selected rating
+          stars.forEach((s) => s.classList.remove("selected"));
+          for (let i = 0; i < selectedRating; i++) {
+            stars[i].classList.add("selected");
+          }
+        });
+      });
+
+      // JavaScript for submit button
+      document.getElementById("submitBtn").addEventListener("click", () => {
+        const feedback = document.getElementById("feedback").value;
+        if (selectedRating > 0 && feedback.trim()) {
+          // Show thank you message
+          document.getElementById("thankYouMessage").style.display = "block";
+        } else {
+          alert("Please provide a rating and feedback.");
+        }
+      });
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
+  </body>
+</html>

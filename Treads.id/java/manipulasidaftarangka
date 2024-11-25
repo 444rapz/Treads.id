@@ -1,0 +1,94 @@
+import java.util.Scanner;
+
+public class manupulasidaftarangka {
+    public static void main(String[] args) {
+        Scanner masukan = new Scanner(System.in);
+        int[] daftar = {5, 15, 25, 35, 45};
+        int ukuran = daftar.length;
+        
+        while (true) {
+            System.out.println("\nMenu Operasi Daftar:");
+            System.out.println("1. Tampilkan Semua Data");
+            System.out.println("2. Masukkan Data Baru");
+            System.out.println("3. Hilangkan Data");
+            System.out.println("4. Perbarui Data");
+            System.out.println("5. Gabungkan Daftar");
+            System.out.println("6. Selesai");
+            System.out.print("Masukkan pilihan Anda: ");
+            
+            int pilihan = masukan.nextInt();
+            
+            switch (pilihan) {
+                case 1:
+                    for (int i = 0; i < ukuran; i++) {
+                        System.out.print(daftar[i] + " ");
+                    }
+                    System.out.println();
+                    break;
+                    
+                case 2:
+                    if (ukuran < daftar.length) {
+                        System.out.print("Masukkan angka baru: ");
+                        daftar[ukuran] = masukan.nextInt();
+                        ukuran++;
+                    } else {
+                        System.out.println("Daftar sudah penuh!");
+                    }
+                    break;
+                    
+                case 3:
+                    System.out.print("Posisi yang akan dihapus: ");
+                    int posisi = masukan.nextInt();
+                    if (posisi >= 0 && posisi < ukuran) {
+                        for (int i = posisi; i < ukuran - 1; i++) {
+                            daftar[i] = daftar[i + 1];
+                        }
+                        ukuran--;
+                    } else {
+                        System.out.println("Posisi tidak tersedia!");
+                    }
+                    break;
+                    
+                case 4:
+                    System.out.print("Posisi yang akan diubah: ");
+                    int pos = masukan.nextInt();
+                    if (pos >= 0 && pos < ukuran) {
+                        System.out.print("Masukkan nilai baru: ");
+                        daftar[pos] = masukan.nextInt();
+                    } else {
+                        System.out.println("Posisi tidak tersedia!");
+                    }
+                    break;
+                    
+                case 5:
+                    int[] daftar2 = {55, 65, 75};
+                    int[] gabungan = new int[ukuran + daftar2.length];
+                    int jumlah = 0;
+                    
+                    for (int i = 0; i < ukuran; i++) {
+                        gabungan[i] = daftar[i];
+                        jumlah += daftar[i];
+                    }
+                    for (int i = 0; i < daftar2.length; i++) {
+                        gabungan[ukuran + i] = daftar2[i];
+                        jumlah += daftar2[i];
+                    }
+                    
+                    System.out.println("Hasil gabungan:");
+                    for (int nilai : gabungan) {
+                        System.out.print(nilai + " ");
+                    }
+                    System.out.println("\nTotal: " + jumlah);
+                    break;
+                    
+                case 6:
+                    System.out.println("Program selesai");
+                    masukan.close();
+                    return;
+                    
+                default:
+                    System.out.println("Pilihan tidak tersedia!");
+            }
+        }
+    }
+}

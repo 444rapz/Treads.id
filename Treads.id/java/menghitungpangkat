@@ -1,0 +1,14 @@
+public class menghitungpangkat {
+    public static int pangkat(int x, int n) {
+        if (n == 0) {
+            return 1;
+        }
+        return x * pangkat(x, n - 1);
+    }
+    
+    public static void main(String[] args) {
+        int angka = 3;  // Basis
+        int eksponen = 4;  // Pangkat
+        System.out.println(angka + " pangkat " + eksponen + " = " + pangkat(angka, eksponen));
+    }
+}

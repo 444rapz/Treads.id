@@ -1,0 +1,681 @@
+/* Global Settings */
+:root {
+  --primary: #e50914; /* Tombol CTA */
+  --secondary: #121212; /* Latar belakang utama */
+  --accent: #ffffff; /* Warna teks utama */
+  --gray: #f5f5f5; /* Abu terang untuk kartu */
+  --dark-gray: #2e2e2e; /* Warna abu-abu gelap */
+  --hover: #ff6f61; /* Warna hover pada tombol */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  background-color: var(--secondary);
+  color: var(--accent);
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 2rem;
+}
+
+/* Header */
+.header {
+  background-color: var(--secondary);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.header .logo span {
+  color: var(--primary);
+}
+
+.nav {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  color: var(--accent);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--hover);
+}
+
+.header-icons {
+  display: flex;
+  gap: 1rem;
+}
+
+.header-icons a {
+  color: var(--accent);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.header-icons a:hover {
+  color: var(--hover);
+}
+
+/* Hero Section */
+.hero {
+  background: url('img/hero-background.jpg') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.hero-content .cta {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  color: var(--accent);
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.hero-content .cta:hover {
+  background-color: var(--hover);
+}
+
+/* About Section */
+.about {
+  background-color: var(--gray);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.about h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.about h2 span {
+  color: var(--primary);
+}
+
+.about p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.about-img {
+  width: 80%;
+  max-width: 600px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Products Section */
+.products {
+  background-color: var(--secondary);
+  padding: 5rem 2rem;
+}
+
+.products h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.products h2 span {
+  color: var(--primary);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.product-card {
+  background-color: var(--gray);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.product-card h3 {
+  margin-bottom: 0.5rem;
+}
+
+.product-card p {
+  margin-bottom: 1rem;
+}
+
+.product-card .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: var(--primary);
+  color: var(--accent);
+  text-transform: uppercase;
+  font-size: 1rem;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.product-card .btn:hover {
+  background-color: var(--hover);
+}
+
+/* Recommendation Section */
+.recommendation {
+  background-color: var(--dark-gray);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.recommendation h2 {
+  color: var(--accent);
+  margin-bottom: 2rem;
+}
+
+.recommendation h2 span {
+  color: var(--primary);
+}
+
+.recommend-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}
+
+.recommend-card {
+  background-color: var(--gray);
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.recommend-card:hover {
+  transform: scale(1.05);
+}
+
+.recommend-card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+/* Contact Section */
+.contact {
+  background-color: var(--secondary);
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.contact h2 span {
+  color: var(--primary);
+}
+
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+}
+
+.form-input,
+.form-textarea {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--gray);
+  color: var(--dark-gray);
+  font-size: 1rem;
+}
+
+.btn {
+  display: inline-block;
+  background-color: var(--primary);
+  color: var(--accent);
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  text-transform: uppercase;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn:hover {
+  background-color: var(--hover);
+}
+
+/* Footer */
+.footer {
+  background-color: var(--dark-gray);
+  color: var(--accent);
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.footer .social-links a {
+  margin: 0 1rem;
+  color: var(--accent);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.footer .social-links a:hover {
+  color: var(--primary);
+}
+
+/* ====================== Variasi Produk ====================== */
+
+.product-card .color-options {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .product-card .color-options span {
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid var(--secondary);
+    cursor: pointer;
+  }
+  
+  .product-card .color-options span.red {
+    background-color: red;
+  }
+  
+  .product-card .color-options span.blue {
+    background-color: blue;
+  }
+  
+  .product-card .color-options span.green {
+    background-color: green;
+  }
+  
+  .product-card .size-options {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem 0;
+  }
+  
+  .product-card .size-options span {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--dark-gray);
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+  }
+  
+  .product-card .size-options span:hover {
+    background-color: var(--primary);
+    color: var(--accent);
+  }
+  
+  /* ====================== Animasi Hover Tambahan ====================== */
+  
+  .hero-content h1 {
+    font-size: 3.5rem;
+    text-transform: uppercase;
+    animation: fadeIn 1s ease-in-out;
+  }
+  
+  .hero-content p {
+    animation: fadeIn 1.5s ease-in-out;
+  }
+  
+  .hero-content .cta {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .product-card:hover img {
+    transform: scale(1.1);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .recommend-card:hover img {
+    transform: scale(1.05);
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* ====================== Media Queries untuk Responsivitas ====================== */
+  
+  @media screen and (max-width: 1200px) {
+    .product-grid,
+    .recommend-grid {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+  
+    .hero-content h1 {
+      font-size: 2.5rem;
+    }
+  
+    .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .header .nav {
+      display: none;
+    }
+  
+    .header .nav.active {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: var(--secondary);
+      text-align: center;
+    }
+  
+    .header .nav-links {
+      flex-direction: column;
+    }
+  
+    .hero-content h1 {
+      font-size: 2rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .hero-content h1 {
+      font-size: 1.8rem;
+    }
+  
+    .hero-content p {
+      font-size: 0.9rem;
+    }
+  
+    .product-card {
+      padding: 1rem;
+    }
+  }
+  
+  /* ====================== Tooltip untuk Interaktivitas ====================== */
+  
+  .product-card .tooltip {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+  }
+  
+  .product-card .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 120px;
+    background-color: var(--dark-gray);
+    color: var(--accent);
+    text-align: center;
+    border-radius: 5px;
+    padding: 0.5rem;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%; /* Di atas elemen */
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .product-card .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  /* ====================== Form Style Tambahan ====================== */
+  
+  .contact-form .form-input:focus,
+  .contact-form .form-textarea:focus {
+    outline: none;
+    border: 2px solid var(--primary);
+  }
+  
+  .contact-form .form-textarea {
+    resize: none;
+    height: 150px;
+  }
+  
+  /* ====================== Efek untuk Footer ====================== */
+  
+  .footer {
+    border-top: 1px solid var(--dark-gray);
+    padding-top: 2rem;
+  }
+  
+  .footer .social-links a:hover {
+    transform: scale(1.1);
+    transition: transform 0.2s;
+  }
+  
+  /* ====================== Variasi Warna Tema (Pilih Warna Custom) ====================== */
+  
+  .theme-dark {
+    --primary: #e50914;
+    --secondary: #121212;
+    --accent: #ffffff;
+    --gray: #2e2e2e;
+  }
+  
+  .theme-light {
+    --primary: #ff6f61;
+    --secondary: #f5f5f5;
+    --accent: #121212;
+    --gray: #ffffff;
+  }
+
+  /* Collections Section */
+.collections {
+    background-color: var(--gray);
+    padding: 5rem 2rem;
+  }
+  
+  .collections h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+    color: var(--secondary);
+  }
+  
+  .collections h2 span {
+    color: var(--primary);
+  }
+  
+  .collections-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  
+  .collection-card {
+    text-align: center;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: var(--secondary);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  
+  .collection-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .collection-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .collection-card h3 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: var(--accent);
+  }
+  
+  /* Testimonials Section */
+  .testimonials {
+    background-color: var(--secondary);
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+  
+  .testimonials h2 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 2rem;
+  }
+  
+  .testimonials h2 span {
+    color: var(--primary);
+  }
+  
+  .testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .testimonial-card {
+    background-color: var(--gray);
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .testimonial-card p {
+    font-style: italic;
+    margin-bottom: 1rem;
+  }
+  
+  .testimonial-card h3 {
+    font-size: 1rem;
+    color: var(--secondary);
+  }
+  
+  /* Footer */
+  .footer {
+    background-color: var(--dark-gray);
+    padding: 3rem 2rem;
+    text-align: center;
+  }
+  
+  .footer-links {
+    margin-bottom: 2rem;
+  }
+  
+  .footer-links a {
+    color: var(--accent);
+    margin: 0 1rem;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: color 0.3s;
+  }
+  
+  .footer-links a:hover {
+    color: var(--primary);
+  }
+  
+  .footer .social-links a {
+    margin: 0 1rem;
+    color: var(--accent);
+    font-size: 1.5rem;
+    transition: transform 0.3s, color 0.3s;
+  }
+  
+  .footer .social-links a:hover {
+    transform: scale(1.1);
+    color: var(--primary);
+  }
+  
+  /* Responsivitas Tambahan */
+  @media screen and (max-width: 768px) {
+    .collections h2, .testimonials h2 {
+      font-size: 2rem;
+    }
+  
+    .testimonial-grid, .collections-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .header-icons a {
+      font-size: 1.2rem;
+    }
+  }

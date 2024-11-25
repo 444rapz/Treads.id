@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class PenghitungPendapatan {
+    public static void main(String[] args) {
+        Scanner masukan = new Scanner(System.in);
+        int[] transaksi = new int[5];
+        int jumlahData = 0;
+        String lanjut;
+        
+        do {
+            if (jumlahData < transaksi.length) {
+                System.out.print("Masukkan nilai transaksi ke-" + (jumlahData + 1) + " = ");
+                transaksi[jumlahData] = masukan.nextInt();
+                jumlahData++;
+                
+                if (jumlahData < transaksi.length) {
+                    System.out.print("Lanjut input transaksi? [Y/T] = ");
+                    masukan.nextLine();
+                    lanjut = masukan.nextLine();
+                    if (lanjut.equalsIgnoreCase("T")) {
+                        break;
+                    }
+                }
+            } else {
+                System.out.println("Data transaksi sudah penuh!");
+                break;
+            }
+        } while (true);
+        
+        int total = hitungTotal(transaksi, jumlahData);
+        System.out.println("Total pendapatan = " + total);
+        masukan.close();
+    }
